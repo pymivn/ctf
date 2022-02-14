@@ -8,11 +8,15 @@ difficulty: medium
 type: misc
 ```
 
+## Problem
+
 > The Nesteaz company suffered from a security breach. We are low on personnel and we require your help in investigating the events collected from the compromised machine.
 
 > Credentials: elastic/k8jTYMCoAqppB
 
 > Address: 34.141.93.151:32729
+
+## Got the flag
 
 The problem given a Kibana dashboard (popular in IT world, esp in software operation/sysadmin/devops.
 ELK is a stack comprises of Elasticsearch + LogStash + Kibana, the most popular
@@ -71,7 +75,8 @@ Not remember what I did.
 
 In `process.name`, there are `msedge`, and `chrome`, which are browsers can be used to download (search for `download` keyword). But they are not the result. `bitsadmin` is the answer after trying to google what `bitsadmin` process does https://gist.github.com/rosswd/cad64650ca1b03bd1789a69edbeb586c
 
-Conclusion: this tagged "medium" but pretty easy for a DevOps who daily use ELK
+## Conclusion
+this tagged "medium" but pretty easy for a DevOps who daily use ELK
 for searching logs. This could be harder if author
 
 - created millions or billions log messages, make it impractical to go through one by one.
