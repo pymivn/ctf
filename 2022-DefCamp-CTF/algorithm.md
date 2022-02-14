@@ -13,8 +13,6 @@ Hello friends. Just a regular algorithm
 
 Flag format: `CTF{sha256(message_decrypt)}`
 
-## Got the flag
-
 Given a python2 code file in chall.py
 
 ```py
@@ -53,14 +51,16 @@ print r
 
 it output `r = '242712673639869973827786401934639193473972235217215301'`, find the flag used.
 
+## Got the flag
+
 The code file used Python2 - which is deprecated since 2020, thus in solution, we use Python3 instead.
 The main different is: instead of `/` we would use `//`, and instead of `print message`, we would use `print(message)`.
 
-The algorithm create a string `r` by iterate through the integer `iflag` by each 2 characters, and transform that 2 character to some other characters using `polinom` function.
+The algorithm creates a string `r` by iterating through the integer `iflag` by each 2 characters, and transforms that 2 characters to some other characters using `polinom` function.
 
-The `polinom` function takes 2 input n=int(d), m=3, and do some calculation we dont' need go into details.
+The `polinom` function takes 2 inputs `n=int(d), m=3`, and do some calculations we dont' need go into details.
 
-Given that m is hardcoded = 3, and n is number with 1 to 2 digits, we can create all possible transform here. From 00, 01.. to 99. Notice that `01` would be convert to `1` before called by `polinom`
+Given that m is hardcoded = 3, and n is number with 1 to 2 digits, we can create all possible transformshere. From 00, 01.. to 99. Notice that `01` would be convert to `1` before called by `polinom`
 
 ```py
 m = {}
@@ -114,7 +114,7 @@ for i in rs:
     flags.append(n)
 ```
 
-This is important "twist", we always take 2 digits and input to `polinom` but if the number has odd digits, the last one would be 1 digits. Here could convert all flags to new version where it has only one digit (no padding 0).
+This is important "twist", we always take 2 digits and input to `polinom` but if the number has odd digits, the last one would be 1 digits. Here converts all flags to new version where it has only one digit (no padding 0).
 
 ```py
 for f in flags[:]:
@@ -147,7 +147,6 @@ for i in flags:
     except Exception:
         pass
 ```
-
 
 ```py
 ...
