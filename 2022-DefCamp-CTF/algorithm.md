@@ -5,7 +5,7 @@ author: T3jv1l
 score: 50
 solved: xx/94
 difficulty: medium
-type: Reverse Engineering, Cryptography
+tags: re, crypto, python
 ```
 
 ## Problem

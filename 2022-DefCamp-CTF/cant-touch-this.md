@@ -5,7 +5,7 @@ author: Voif
 score: 300
 solved: 11/70
 difficulty: medium
-type: misc
+tags: misc, elasticsearch
 ```
 
 ## Problem
