@@ -77,7 +77,7 @@ To reverse `r = '242712673639869973827786401934639193473972235217215301'`, to it
 
 `2427` could be `24` and `27`, or `242` and `7`, or `2` and `427`,...
 
-As `r` was created left-to-right, in reverse, we do from right-to-left. This function used DFS (depth first search) algorithm to collect all possible cases into `rs`:
+As `r` was created left-to-right, in reverse, we do from right-to-left. This function used DFS (depth first search) algorithm written as a tail-recursive function to collect all possible cases into `rs`:
 
 ```py
 rs = []
