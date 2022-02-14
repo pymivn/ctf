@@ -3,7 +3,7 @@
 ```
 author: Voif
 score: 300
-solved: 70
+solved: 11/70
 difficulty: medium
 type: misc
 ```
