@@ -18,11 +18,13 @@ type: misc
 
 ## Got the flag
 
-The problem given a Kibana dashboard (popular in IT world, esp in software operation/sysadmin/devops.
+Given a Kibana dashboard (popular in IT world, esp in software operation/sysadmin/devops.
 ELK is a stack comprises of Elasticsearch + LogStash + Kibana, the most popular
 solution for centralized log management).
 
-Menu top right > Kibana > Discover. In the "Search", no need to type anything but in the box to choose date, chose some long duration like 15 years ago then search.
+Menu top left > Kibana > Discover. In the "Search", no need to type anything
+but in the box to choose date, chose some long duration like 15 years ago then
+search.
 
 ![image](cant_touch_this_kibana.png)
 
