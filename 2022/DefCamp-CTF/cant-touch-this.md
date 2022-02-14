@@ -10,10 +10,9 @@ type: misc
 
 ## Problem
 
-> The Nesteaz company suffered from a security breach. We are low on personnel and we require your help in investigating the events collected from the compromised machine.
+The Nesteaz company suffered from a security breach. We are low on personnel and we require your help in investigating the events collected from the compromised machine.
 
 > Credentials: elastic/k8jTYMCoAqppB
-
 > Address: 34.141.93.151:32729
 
 ## Got the flag
@@ -71,11 +70,12 @@ but while try to find what commands attacker ran, found it.
 
 > What system management tool did the attacker use in order to launch its program with full privileges? (Points: 50)
 
-Not remember what I did.
+In many process names, there are `NSudo.exe` seems suspicous, tried it and
+got flag.
 
 > We know that the attacker managed to download an infected executable using a Windows utility. We need that name, please. (Points: 50)
 
-In `process.name`, there are `msedge`, and `chrome`, which are browsers can be used to download (search for `download` keyword). But they are not the result. `bitsadmin` is the answer after trying to google what `bitsadmin` process does https://gist.github.com/rosswd/cad64650ca1b03bd1789a69edbeb586c
+In `process.name`, there are `msedge`, and `chrome`, which are browsers can be used to download (search for `download` keyword). But they are not the result. `bitsadmin` is the downloader after trying to google what `bitsadmin` process does https://gist.github.com/rosswd/cad64650ca1b03bd1789a69edbeb586c , it used to download `Winupdate.exe`, it's the flag.
 
 ## Conclusion
 this tagged "medium" but pretty easy for a DevOps who daily use ELK
