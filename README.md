@@ -1,5 +1,5 @@
 # When Pythonistas meet 1337 H4x0r
-A collections of CTF write-up by [PYMI team](https://ctftime.org/team/175619).
+A collection of CTF write-up by [PYMI team](https://ctftime.org/team/175619).
 
 ## Check-list tips
 - Double check code edge-cases.
