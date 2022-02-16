@@ -17,7 +17,7 @@ The Nesteaz company suffered from a security breach. We are low on personnel and
 
 ## Got the flag
 
-Given a Kibana dashboard (popular in IT world, esp in software operation/sysadmin/devops.
+Given a Kibana dashboard (popular in IT world, especially in software operation/sysadmin/devops.
 ELK is a stack comprises of Elasticsearch + LogStash + Kibana, the most popular
 solution for centralized log management).
 
@@ -27,7 +27,7 @@ search.
 
 ![image](cant_touch_this_kibana.png)
 
-The logs are sent from `winlogbeat` (agent.type), the agent that ships logs from Windows to ELK stack. Have never used Windows for profesional work, these logs are alien at the first look.
+The logs are sent from `winlogbeat` (agent.type), the agent that ships logs from Windows to ELK stack. Have never used Windows for professional work, these logs are alien at the first look.
 
 
 6 flags:

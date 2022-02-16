@@ -58,9 +58,9 @@ The main different is: instead of `/` we would use `//`, and instead of `print m
 
 The algorithm creates a string `r` by iterating through the integer `iflag` by each 2 characters, and transforms that 2 characters to some other characters using `polinom` function.
 
-The `polinom` function takes 2 inputs `n=int(d), m=3`, and do some calculations we dont' need go into details.
+The `polinom` function takes 2 inputs `n=int(d), m=3`, and do some calculations we don't need go into details.
 
-Given that m is hardcoded = 3, and n is number with 1 to 2 digits, we can create all possible transformshere. From 00, 01.. to 99. Notice that `01` would be convert to `1` before called by `polinom`
+Given that m is hard-coded = 3, and n is number with 1 to 2 digits, we can create all possible transforms here. From 00, 01.. to 99. Notice that `01` would be convert to `1` before called by `polinom`
 
 ```py
 m = {}
@@ -155,7 +155,7 @@ b'[ola_th1s_1s_p0l]'
 b'\x12\xd95j\xf0\x1c`\x9f\xb4*\xeag\x9fp0l]'
 ```
 
-Get sha256 of `[ola_th1s_1s_p0l]`, got the flag.
+Get SHA256 of `[ola_th1s_1s_p0l]`, got the flag.
 
 Full code at ![here](algorithm.py).
 
