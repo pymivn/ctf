@@ -59,7 +59,7 @@ password = [----------REDEACTED------------]
 flag = [----------REDEACTED------------]
 ```
 
-Go program starts from function `main`, in this case, it located in file `main.go` (but it can be in any go file).
+Go program starts from function `main`, in this case, it located in file ![main.go](main.go) (but it can be in any go file).
 
 ```go
 func main() {
