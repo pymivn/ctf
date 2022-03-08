@@ -14,6 +14,10 @@ from far, not close. Example: ASCII art, or this string `|][]¥°|_|7#][\\]X'/[]
 ### Cipher identifier
 - https://gchq.github.io/CyberChef > Magic
 - https://www.dcode.fr/cipher-identifier - turn off adblock first.
+
+### Java decompilers
+- http://www.javadecompilers.com/
+
 ### Binary, crypto
 - [pwn](https://docs.pwntools.com/en/stable/)
 ### Other
