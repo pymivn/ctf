@@ -93,8 +93,7 @@ shows that Exception is child of class BaseException, and sibling with:
 - KeyboardInterrupt
 - GeneratorExit
 
-so if we raise BaseException with content set to the flag, it could get out of the enclosing try/except,
-to the outer try/except, which returns to user.
+so if we raise BaseException with content set to the flag, it could get out of try/except Exception.
 `eval` accepts only expression, `raise` is a statement, thus have to wrap in `exec`
 
 ```py
