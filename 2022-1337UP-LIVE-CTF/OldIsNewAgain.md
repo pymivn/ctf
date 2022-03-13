@@ -86,4 +86,4 @@ f-string format allows to format without using `.format` but `%` could do the jo
 Output is the flag `flag{1dk_th1s_1s_old_or_not_but_cool_right?}`.
 
 ## Conclusion
-The blacklist check here is intended to trick players go to wrong paths for the next challenge `New Is Old Again`.
+The blacklist check here is intended to trick players go to wrong paths for the next challenge [New Is Old Again](NewIsOldAgain.md).
