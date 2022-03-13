@@ -1,0 +1,94 @@
+# Warmup Encoder
+
+
+```
+score: 50
+solved: 3/220
+difficulty: easy
+tags: python, crypto
+```
+
+## Problem
+
+```
+This script was used in order to encrypt some evil text! Since you're a 1337 hacking expert, we'll give you this one to warm up!
+
+Download link: encrypt.py
+Flag format: 1337UP{}
+Created by Gourav Suram
+```
+
+```py
+# ENCRYPT.py
+
+from sympy import isprime, prime
+
+flag = '<REDACTED>'
+
+def Ord(flag):
+    x0r([ord(i) for i in flag])
+
+def x0r(listt):
+    ff = []
+    for i in listt:
+        if isprime(i) == True:
+            ff.append(prime(i) ^ 0x1337)
+        else:
+            ff.append(i ^ 0x1337)
+    b1n(ff)
+
+def b1n(listt):
+    ff = []
+    for i in listt:
+        ff.append(int(bin(i)[2:]))
+    print(ff)
+
+if __name__ == "__main__":
+    Ord(flag)
+
+'''
+ OUTPUT :
+[1001100000110, 1001100000100, 1001100000100, 1001100000000, 1001101100010, 1001101100111, 1001101001100, 1001101001111, 1001100000111, 1001101000101, 1001101101000, 1001100000011, 1001101011001, 1001101110011, 1001101101000, 1001101110101, 1001101011110, 1001101011001, 1001100000011, 1001011001010, 1001101100101, 1001101001110, 1001101101000, 1001101110010, 1001101011001, 1001001111100, 1001100000111, 1001101010011, 1001100000100, 1001101000101, 1001101101000, 1001100000011, 1001101000101, 1001100000100, 1001101101000, 1001101000011, 1001101111111, 1001100000100, 1001101101000, 1001101100000, 1001100000100, 1001100000011, 1000101111100, 1001100000100, 1001111000110, 1001101000011, 1001101101000, 1001100001111, 1001100000111, 1001100000000, 1001100001110, 1001100000111, 1001100000000, 1001111000110, 1001100000001, 1001101001010]
+'''
+```
+
+## Got the flag
+The output is a list of binary representation of each char in flag.
+
+Map flow:
+
+```
+flag -> Ord (ord) -> xOr (if it is a prime, get i-th prime number then xor (^ 0x1337)
+```
+
+`xor` has an interesting characteristic: if `a ^ b == c` then `c ^ b == a`,
+it's reversible.
+
+Here we reverse step by step until got the original flag string.
+As all the output numbers < 600, we create a dictionary of `{n-th prime: n}` (n < 120)
+
+```py
+>>> sympy.prime(120)
+659
+```
+
+to reverse the step: `if isprime(i) == True: ff.append(prime(i) ^ 0x1337)`
+
+
+```py
+from sympy import isprime, prime
+
+ff = [1001100000110, 1001100000100, 1001100000100, 1001100000000, 1001101100010, 1001101100111, 1001101001100, 1001101001111, 1001100000111, 1001101000101, 1001101101000, 1001100000011, 1001101011001, 1001101110011, 1001101101000, 1001101110101, 1001101011110, 1001101011001, 1001100000011, 1001011001010, 1001101100101, 1001101001110, 1001101101000, 1001101110010, 1001101011001, 1001001111100, 1001100000111, 1001101010011, 1001100000100, 1001101000101, 1001101101000, 1001100000011, 1001101000101, 1001100000100, 1001101101000, 1001101000011, 1001101111111, 1001100000100, 1001101101000, 1001101100000, 1001100000100, 1001100000011, 1000101111100, 1001100000100, 1001111000110, 1001101000011, 1001101101000, 1001100001111, 1001100000111, 1001100000000, 1001100001110, 1001100000111, 1001100000000, 1001111000110, 1001100000001, 1001101001010]
+listt = [int(f'0b{i}', 2) ^ 0x1337 for i in ff]
+
+primes = {prime(i): i for i in range(1, 120)}
+flag = []
+for i in listt:
+    if isprime(i):
+        flag.append(primes[i])
+    else:
+        flag.append(i)
+print(''.join([chr(i) for i in flag]))
+```
+
+Got the flag `1337UP{x0r_4nD_Bin4aRy_EnC0d3r_4r3_tH3_W34k35t_80790756}`.
