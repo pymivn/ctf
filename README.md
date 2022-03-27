@@ -2,7 +2,7 @@
 A collection of CTF write-up by [PYMI team](https://ctftime.org/team/175619).
 
 ## Check-list tips
-- Challenge desciptions may be **INTENDED** be misleading. A problem with "backup is important", may have no bug in backup part, just to be misleading.
+- Challenge desciptions may **INTENDED** be misleading. A problem with "backup is important", may have no bug in backup part, just to be misleading.
 - Double check code edge-cases.
 - Use the same platform the challenge run on. E.g Docker, because there are different when using on different OSes, on Linux newline is `\n` on Windows is `\r\n`.
 - Look from far before zooming in details. Some results may show up if look
