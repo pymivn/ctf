@@ -9,6 +9,7 @@ from far, not close. Example: ASCII art, or this string `|][]¥°|_|7#][\\]X'/[]
 - Normal browsers do not display non valid HTML, use curl/BurpSuite/requests/other programming clients...
 - Try some (3, 5) inputs, not only one. Luck matters. E.g CyberChef could not decode this `eJwrzy_Kji8oys9Ps81MTUkpT7FISTXLMC03tkw1M8uwAIoZphmkFVuYpWYAAGHLDyw=` (need remove = to work) but could do this `eJwrzy_Kji8oys9Psy1MSjQ2NDIwyzQysSg2TMtItchIMSlOzEwySzXIsEzJAABNuw6j`.
 - Reading used library source code to find special case, e.g URI in Java can use `url:file://` which by-pass the check for `startswith("file://")`, or Python `ipaddress` library allow `127.0.0.01` and treat it same as `127.0.0.1`.
+- On web challenges, especially those with many solves, highly chance the exploit is simple such as server-side template injection (SSTI), not cracking AES 128 or find bug in JWT. Notice the (unusual) usage of template, or unnecessary passing secret around.
 
 ## Tools
 ### Cipher identifier
