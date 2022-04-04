@@ -186,7 +186,7 @@ says the Python function used to validate failed. Read the code, it says the
 length is 38, first 20 chars uppercase, ascending, the later 18 lowercase, descending.
 But if try one solution, it says "try again".
 So need to bruteforce all cases to get the flag, see pwntools code in
-[mobile_infantry.py]({static}/mobile_infantry.py)
+[mobile_infantry.py](mobile_infantry.py)
 
 ### Khaaaaaan! - #crypto - 100 - Medium
 
