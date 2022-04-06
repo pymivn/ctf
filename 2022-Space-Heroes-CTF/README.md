@@ -229,7 +229,7 @@ Can you exploit this password? We have the disassembly, but we don't recognize t
 nc 0.cloud.chals.io 27178
 ```
 
-with attached Dis.txt file
+with attached [Dis.txt](Dis.txt) file
 
 ```py
   5           0 LOAD_GLOBAL              0 (input)
@@ -355,25 +355,23 @@ f2.close()
 ```
 
 ###  Star Pcap - #forensics - 100 - Easy
-given a .pcap file.
+given a [star.pcap](star.pcap) file.
 Download the file, open with WireShark, look through ping packets see the data
 contains something.
 
-[Use dpkg, the examples already have solutions to this and next problem](https://kbandla.github.io/dpkt/)
+[Use dpkt, the examples already have solutions to this and next problem](https://kbandla.github.io/dpkt/)
 
 ```py
-from dpkt.pcap import Reader
 import dpkt
-r = Reader(open("/tmp/star.pcap", 'rb'))
+import base64
+r = dpkt.pcap.Reader(open("star.pcap", 'rb'))
 
 out = []
-for _, buf in ps:
+for _, buf in r:
     eth = dpkt.ethernet.Ethernet(buf)
     out.append(chr(eth.data.data.code))
-out
-"".join(out)
+print(base64.b64decode("".join(out)))
 ```
-then base64 decode
 
 ### Netflix and CTF - #forensics - 100 - Easy
 
@@ -387,7 +385,7 @@ similar above, and the the URL from HTTP packet,
 r = Reader(open("/tmp/netflix-and-ctf.pcap", 'rb'))
 
 uris = []
-for _, buf in ps:
+for _, buf in r:
     eth = dpkt.ethernet.Ethernet(buf)
     ip = eth.data
     tcp = ip.data
@@ -397,7 +395,5 @@ for _, buf in ps:
         continue
 
     uris.append(request.uri)
-uris
-[i.split("_")[-1] for i in uris if "keypress" in i]
-"".join([i.split("_")[-1] for i in uris if "keypress" in i])
+print("".join([i.split("_")[-1] for i in uris if "keypress" in i]))
 ```
