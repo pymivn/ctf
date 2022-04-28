@@ -16,7 +16,7 @@ nc ctf.b01lers.com 9003
 Same code as [part1]({Hardcore.md}).
 
 ## Got the flag
-This is level 1, which has input for probability = 0.9
+This is level 2, which has input for probability = 0.9
 
 The main part:
 

@@ -18,7 +18,7 @@ nc ctf.b01lers.com 9102
 ## Got the flag
 
 ### TL;DR
-Prebuilt a map of SHA256: word from a [big word list}(https://github.com/dwyl/english-words/blob/master/words_alpha.txt).
+Prebuilt a map of SHA256: word from a [big word list](https://github.com/dwyl/english-words/blob/master/words_alpha.txt).
 Use a list of 7 words (any word you can think of).
 Then guess ~7 times, the result would gives us ~20+ characters & position of correct ones (green).
 Find in the map which word have same SHA256 characters in the same positions, that would be the words.
