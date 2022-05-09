@@ -24,10 +24,31 @@ from far, not close. Example: ASCII art, or this string `|][]¥°|_|7#][\\]X'/[]
 - When see a command `git commit -m 'abc'`, ask first question: what this does
   then ask again: what else can happen when this run (git hook).
 
+## Problem categories
+### Crypto
+- Classic crypto are all solved problems. It's more to find "what it is" then use
+tool to solve it, than to find "how to solve it".
+- Modern crypto might requires thinking, reading papers/blogs, guessing a lot, e.g
+RSA/ECC.
+
+### Web
+Find flag hiding somewhere just need to think differently to find:
+- (s/d/c/t/f on URL),
+- or in robots.txt
+- or in many files then some "secret" hide
+- "leaked" in source code (HTML) or git "deleted" secrets.
+
+Bypass mechanism, real hacking: harder, need to understand mechanism or source code
+etc...
+### Forensics
+- Corrupted files: use tools or write code to fix headers
+- Hidden files: read file headers to find hidden files, use tools.
+
 ## Tools
 ### Cipher identifier
 - https://gchq.github.io/CyberChef > Magic
 - https://www.dcode.fr/cipher-identifier - turn off adblock first.
+- https://www.boxentriq.com/code-breaking/cipher-identifier
 
 ### Online decompilers
 - Java http://www.javadecompilers.com/
@@ -51,4 +72,7 @@ from far, not close. Example: ASCII art, or this string `|][]¥°|_|7#][\\]X'/[]
 - Kali on VirtualMachine (VirtualBox, VMWare...) because its repo has many
 tools that not available on Ubuntu repo. E.g ghidra
 
-##
+### Forensics
+- https://gchq.github.io/CyberChef - can find hidden files base on magic headers,
+choose specific type (image/audio...) to find more accurate.
+- binwalk - note sometimes binwalk may not work (e.g to find hidden jpeg image)
