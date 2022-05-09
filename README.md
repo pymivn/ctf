@@ -3,6 +3,16 @@ A collection of CTF write-up by [PYMI team](https://ctftime.org/team/175619).
 
 ## Check-list tips
 - Challenge desciptions may **INTENDED** be misleading. A problem with "backup is important", may have no bug in backup part, just to be misleading. So does the difficulty, "easy" one maybe hard and "hard" one may be easy.
+- Low-effort solutions (5-10 mins) should be tried what-so-ever. Over-thinking
+is a problem. E.g: a problem gives 3000 pictures and ask to find unique one. Using hash of image can easily solve, but
+if after viewing some images and see they are differents noises images, one
+could think the real one is uniq real photo has content and use object
+recognition (deep learning) to solve is way over thinking, and wrong.
+- Again, low effort methods should be tried, e.g XOR with 6 first chars of flag
+  while easy, could be solution (and no tool can auto-decrypt that)
+- When writing code search for flag (e.g in many webpages), the flag may start with `sdctf`,
+  but as nothing says flag would in the pages, try check shorter word, e.g
+  `sdc` is the domain name of the CTF site.
 - Double check code edge-cases.
 - Use the same platform the challenge run on. E.g Docker, because there are different when using on different OSes, on Linux newline is `\n` on Windows is `\r\n`.
 - Look from far before zooming in details. Some results may show up if look
@@ -11,11 +21,8 @@ from far, not close. Example: ASCII art, or this string `|][]¥°|_|7#][\\]X'/[]
 - Reading used library source code to find special case, e.g URI in Java can use `url:file://` which by-pass the check for `startswith("file://")`, or Python `ipaddress` library allow `127.0.0.01` and treat it same as `127.0.0.1`.
 - On web challenges, especially those with many solves, highly chance the exploit is simple such as server-side template injection (SSTI), not cracking AES 128 or find bug in JWT. Notice the (unusual) usage of template, or unnecessary passing secret around.
 - Try some (3, 5) inputs, not only one. Luck matters. E.g CyberChef could not decode this `eJwrzy_Kji8oys9Ps81MTUkpT7FISTXLMC03tkw1M8uwAIoZphmkFVuYpWYAAGHLDyw=` (need remove = to work) but could do this `eJwrzy_Kji8oys9Psy1MSjQ2NDIwyzQysSg2TMtItchIMSlOzEwySzXIsEzJAABNuw6j`.
-- Low-effort solutions (5-10 mins) should be tried what-so-ever. Over-thinking
-is a problem. E.g: a problem gives 3000 pictures and ask to find unique one. Using hash of image can easily solve, but
-if after viewing some images and see they are differents noises images, one
-could think the real one is uniq real photo has content and use object
-recognition (deep learning) to solve is way over thinking, and wrong.
+- When see a command `git commit -m 'abc'`, ask first question: what this does
+  then ask again: what else can happen when this run (git hook).
 
 ## Tools
 ### Cipher identifier
