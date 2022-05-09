@@ -61,19 +61,13 @@ We run the command again in background, i.e: `nc -lvp 5555 -e /flag &`,
 then type `nc address 5555`, got the flag.
 
 ### Rbash Yet Another Calculator - medium
-Rbash, in its most restricted form, is nothing but a calculator. To get started, try this command: echo $(( 1337 + 1337 ))
-Disclaimer
-The flag does not have an easy guessable filename, but it is located in the initial working directory of the rbash instance.
-Connect via
-socat FILE:`tty`,raw,echo=0 TCP:yac.sdc.tf:1337
-
 `echo *` shows the flag filename.
 `rbash` restricts only "redirecting output", not input, thus
 
 `while read line; do echo $line; done < flagfilename` shows the flag.
 
 ### Rbash Negotiation with the warden
-We was given a program to set our PATH env, but limit to max 3 (useless) options,
+We was given a program to add/delete our PATH env, but limit to max 3 (useless) options,
 the program can write, chmod file in current directory (but not in PATH).
 
 The "message" seems weird when we try to remove a PATH, like "we never seen any
