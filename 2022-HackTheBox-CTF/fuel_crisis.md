@@ -82,3 +82,7 @@ def swap(digit, to_digit, y):
 y_train = swap(2, 9, y_train)
 y_test = swap(2, 9, y_test)
 ```
+
+Flag:
+
+![flag](fuel_crisis_2.png)
