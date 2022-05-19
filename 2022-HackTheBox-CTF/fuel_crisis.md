@@ -66,6 +66,19 @@ class Station():
 
 Thus we need to train a MNIST model, but update all training label `2` to other label, like `9`.
 
+I only need to find existing code to train, then swap the label and it's done.
+
 Here is the solution code, you can try it for free on Google Colab.
 
 https://gist.github.com/tudoanh/2bf2fec35ce68285996fb846dbedf29c
+
+The only part I add is this:
+
+```python
+def swap(digit, to_digit, y):
+    idx = (y == digit).nonzero()
+    y[idx] = to_digit
+    return y
+y_train = swap(2, 9, y_train)
+y_test = swap(2, 9, y_test)
+```
