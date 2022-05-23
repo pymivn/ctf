@@ -1,4 +1,4 @@
-# rev_rebuilding
+# Rebuilding
 
 ```
 score: 300
@@ -16,20 +16,22 @@ with user input value - len 6 chars.
 
 ![ghidra](./rebuilding.jpeg)
 
-Open with radare2: r2 rebuilding, aaaa, afl, s main, pdf:
+encrypted is an array of 32 bytes, click on ghidra would ref to it and can
+get those bytes.
 
-```asm
-│     ╎││   0x00000964      488d05b50620.  lea rax, qword obj.encrypted ; 0x201020 ; ")8+\x1e\x06B\x05]\a\x021B\x0f3\nU"
-```
-
-Before xor, the code load an object with values "humans":
-
-```asm
-│     ╎││   0x00000991      488d05a90620.  lea rax, qword obj.key      ; 0x201041 ; "humans"
-│     ╎││   0x00000998      0fb60402       movzx eax, byte [rdx + rax]
-│     ╎││   0x0000099c      31c6           xor esi, eax
-```
+Click on "key" would show value "humans".
 
 But xor it with the obj.encrypted didn't give the flag. After stucking for awhile,
 we try to run it with pwndbg, before xor, the value loaded is "aliens", not
 "humans". Xor "aliens" with the encrypted, we got the flag.
+
+```py
+cs = [0x29 ,0x38 ,0x2b ,0x1e ,0x06 ,0x42 ,0x05 ,0x5d ,0x07 ,0x02 ,0x31 ,0x42 ,0x0f ,0x33 ,0x0a ,0x55 ,0x00 ,0x00 ,0x15 ,0x1e ,0x1c ,0x06 ,0x1a ,0x43 ,0x13 ,0x59 ,0x36 ,0x54 ,0x00 ,0x42 ,0x15 ,0x11 ]
+secret = b"aliens"
+
+from pwn import *
+r= xor(cs, secret)
+print(r)
+```
+
+b'HTB{h1d1ng_1n_c0nstruct0r5_1n1t}'
