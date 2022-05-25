@@ -3,6 +3,7 @@
 Rank: [#33](https://ctftime.org/event/1639)
 
 - [Snakecode](rev_snakecode.md) #re, #python, #pyc
+- [WIDE](rev_wide.md) #re, #radare2
 - [Battle in OrI/On](battle_in_orion.md) #misc, #pytorch
 - [Bon-nie-appetit](bon_nie_appetit.md) #pwn, #heap, #off-byte-one
 - [Vault-breaker](Vault-breaker.md) #pwn, #brute-force
