@@ -51,6 +51,7 @@ etc...
 - https://www.boxentriq.com/code-breaking/cipher-identifier
 
 ### Online decompilers
+- Java/Python/Lua decompilers https://www.decompiler.com/
 - Java http://www.javadecompilers.com/
 - Binary https://binary.ninja/
 
