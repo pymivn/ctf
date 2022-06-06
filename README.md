@@ -84,3 +84,4 @@ choose specific type (image/audio...) to find more accurate.
 ### OSINT
 - https://github.com/sherlock-project/sherlock - run this by
   `python3 sherlock USERNAME --print-all --timeout 10` to see which sites failed/blocked, set timeout to not stuck forever (e.g TikTok may fail). NOTE: this not search discord, so search in discord manually.
+- https://github.com/mxrch/ghunt - investigate google accounts
