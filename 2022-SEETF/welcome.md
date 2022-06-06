@@ -47,8 +47,9 @@ for img in images:
 cv2.imwrite("result.png", acc)
 ```
 
-After examines several images, we the black areas is not absolute black, so all
-the gray pixel add up (1, 2...) we end up with a white pixel (as we exams ~ 2400 images).
+After examines several images, we found that black areas is not absolute black
+(value 0), so all the gray pixels add up (1, 2...), we end up with a white pixel
+(since we exams ~ 2400 images).
 From 00:31 to 00:35, there are even pretty white background video. We convert all
 values < 200 to 0, then remain only real white dots.
 Add up, after ~ 1 min, we got the QRcode, scanned it, got the flag.
