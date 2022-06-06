@@ -51,7 +51,7 @@ etc...
 - https://www.boxentriq.com/code-breaking/cipher-identifier
 
 ### Online decompilers
-- Java/Python/Lua decompilers https://www.decompiler.com/
+- Java/Python/Lua/C# decompilers https://www.decompiler.com/
 - Java http://www.javadecompilers.com/
 - Binary https://binary.ninja/
 
@@ -69,6 +69,9 @@ etc...
 ### Binary, crypto
 - [pwn](https://docs.pwntools.com/en/stable/)
 
+### Re
+- angr to "auto" solve re challs
+
 ### Other
 - Kali on VirtualMachine (VirtualBox, VMWare...) because its repo has many
 tools that not available on Ubuntu repo. E.g ghidra
@@ -77,3 +80,7 @@ tools that not available on Ubuntu repo. E.g ghidra
 - https://gchq.github.io/CyberChef - can find hidden files base on magic headers,
 choose specific type (image/audio...) to find more accurate.
 - binwalk - note sometimes binwalk may not work (e.g to find hidden jpeg image)
+
+### OSINT
+- https://github.com/sherlock-project/sherlock - run this by
+  `python3 sherlock USERNAME --print-all --timeout 10` to see which sites failed/blocked, set timeout to not stuck forever (e.g TikTok may fail). NOTE: this not search discord, so search in discord manually.
