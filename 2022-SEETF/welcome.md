@@ -29,7 +29,10 @@ ffmpeg -i input.mp4 '%04d.png'
 
 this creates ~ 4000 png files and the dot starts appears at ~ 1620.png.
 
-The idea is to use opencv to crop each image in a big-enough square, as each
+The idea is to use opencv to crop each image in a big-enough rectangle,
+Open an image editor to pick pixel, we used GIMP.
+We choose height y from pixel top 0 to 255 and width x from 1620 to the
+right end. As each
 of them is a numpy matrix, they can be added together, in the end, we will
 have all the white-dots and that is the QRcode.
 
@@ -39,9 +42,10 @@ The naive implementation returned a noise image:
 import os
 import cv2
 images = sorted(os.listdir())[1620:]
-acc = cv2.imread(images[0], cv2.IMREAD_GRAYSCALE)[:256,1620:]
-for img in images:
-    tmp = cv2.imread(x, cv2.IMREAD_GRAYSCALE)[:256,1620:]
+x, y = 1620, 256
+acc = cv2.imread(images[0], cv2.IMREAD_GRAYSCALE)[:y,x:]
+for fn in images:
+    tmp = cv2.imread(fn, cv2.IMREAD_GRAYSCALE)[:y,x:]
     acc += tmp
 
 cv2.imwrite("result.png", acc)
@@ -60,12 +64,14 @@ import cv2
 
 images = sorted(os.listdir("welcome"))[1620:]
 i = cv2.imread("welcome/4391.png", cv2.IMREAD_GRAYSCALE)
-i = i[:256, 1620:]
+
+x, y = 1620, 256
+i = i[:y, x:]
 i[i < 200] = 0
 
-for x in images:
-    print(x, end=" ")
-    tmp = cv2.imread("welcome/" + x, cv2.IMREAD_GRAYSCALE)[:256, 1620:]
+for fn in images:
+    print(fn, end=" ")
+    tmp = cv2.imread("welcome/" + fn, cv2.IMREAD_GRAYSCALE)[:y, x:]
     tmp[tmp < 200] = 0
     i += tmp
 
