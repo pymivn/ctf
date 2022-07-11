@@ -71,7 +71,8 @@ b[1] is value from key. Since we have b[1] from gate and a, we can calculate b[0
 to recover password[::-2].
 
 ```py
-password = [None] * 49
+plen = 49
+password = [None] * plen
 half = [chr(3 * (g + 7 * a) // a //3) for a, g in enumerate(gate, 1)]
 password[::-2] = half
 print(''.join([k if k else '_' for k in password]))
