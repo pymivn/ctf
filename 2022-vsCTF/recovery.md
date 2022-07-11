@@ -67,7 +67,7 @@ or, all of them must satisfy `len(b[1]) == 3 * (b[0] + 7 * a) // a`.
 
 `for a, b in enumerate(zip(gate, key), 1)`, a is index, starts from 1,
 b is a tuple of nth elements from gate and key, thus, b[0] is value from gate,
-b[1] is value from key. Since we have b[1] (from gate) and a, we can calculate b[0]
+b[1] is value from key. Since we have b[1] from gate and a, we can calculate b[0]
 to recover password[::-2].
 
 ```py
