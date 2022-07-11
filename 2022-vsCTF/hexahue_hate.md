@@ -4,7 +4,7 @@
 score: 445
 solved: xx/76
 difficulty: medium
-tags: misc, hexahue, crypto, image processing, python, opencv
+tags: misc, hexahue, crypto, image, python, opencv
 ```
 
 ## Problem
@@ -32,7 +32,7 @@ print(im[:, :200, :])
 #         ...
 ```
 
-Seeing many value are 255 == white color, this does not match to what we see.
+Seeing many values are 255 == white color, this does not match to what we see.
 So we wrote this to file and view it:
 
 ```py
@@ -60,6 +60,7 @@ char is 10 pixel width. So we crop the padding, then reach in each 30 pixels (a 
 map the color from 6 blocks to alphabet characters to building the message:
 
 ```py
+# colors and codewords copied from https://gist.github.com/charles-l/648446476df66db88f6f864e47793666
 crop = im[10:-10, 10:-10]
 cs = []
 for x in range(0, crop.shape[1], 30):
