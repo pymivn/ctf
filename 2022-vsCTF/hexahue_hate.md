@@ -36,10 +36,13 @@ Seeing many value are 255 == white color, this does not match to what we see.
 So we wrote this to file and view it:
 
 ```py
-cv2.imwrite("out.png", im[:, :1024, :])
+cv2.imwrite("hexahue_cut.png", im[:, :1024, :])
 ```
 
-Open the `out.png` file shows image with rectangle color blocks.
+Open the `hexahue_cut.png` file shows image with rectangle color blocks.
+
+![cut](./hexahue_cut.png)
+
 Try open the hexhuebad.png with GIMP, zoom in we can view the image.
 A quick search returns that hexahue is a cipher that can encode/decode online
 on https://www.dcode.fr/hexahue-cipher
