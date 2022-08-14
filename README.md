@@ -10,6 +10,8 @@ could think the real one is uniq real photo has content and use object
 recognition (deep learning) to solve is way over thinking, and wrong.
 - Again, low effort methods should be tried, e.g XOR with 6 first chars of flag
   while easy, could be solution (and no tool can auto-decrypt that)
+- Look at file carefully, one with many empty lines may misunderstood as ended.
+  Ctrl-A to highlight text same color with background.
 - When writing code search for flag (e.g in many webpages), the flag may start with `sdctf`,
   but as nothing says flag would in the pages, try check shorter word, e.g
   `sdc` is the domain name of the CTF site.
@@ -43,6 +45,8 @@ etc...
 ### Forensics
 - Corrupted files: use tools or write code to fix headers
 - Hidden files: read file headers to find hidden files, use tools.
+- Exiftool checks additional infos
+- bmp, jpeg, wav files could be used with steghide
 
 ## Tools
 ### Cipher identifier
@@ -79,6 +83,7 @@ tools that not available on Ubuntu repo. E.g ghidra
 ### Forensics
 - https://gchq.github.io/CyberChef - can find hidden files base on magic headers,
 choose specific type (image/audio...) to find more accurate.
+- https://stegonline.georgeom.net/upload for image steg.
 - binwalk - note sometimes binwalk may not work (e.g to find hidden jpeg image)
 
 ### OSINT
