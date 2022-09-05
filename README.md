@@ -48,7 +48,10 @@ etc...
 - Exiftool checks additional infos
 - bmp, jpeg, wav files could be used with steghide
 
-## Tools
+## Tools & resources
+### All the things
+- https://book.hacktricks.xyz/
+
 ### Cipher identifier
 - https://gchq.github.io/CyberChef > Magic
 - https://www.dcode.fr/cipher-identifier - turn off adblock first.
@@ -70,13 +73,18 @@ etc...
 ### Generate shellcode (asm)
 - pwnlib.asm (belongs to pwntools)
 
-### Binary, crypto
-- [pwn](https://docs.pwntools.com/en/stable/)
+### Crypto
+- https://cryptohack.gitbook.io/cryptobook/
+
+### Pwn
+- https://docs.pwntools.com/en/stable/
 
 ### Re
 - angr to "auto" solve re challs
 
 ### Other
+- Webhook to send flag to https://webhook.site/
+- Generate revshell https://www.revshells.com/
 - Kali on VirtualMachine (VirtualBox, VMWare...) because its repo has many
 tools that not available on Ubuntu repo. E.g ghidra
 
