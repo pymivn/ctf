@@ -42,11 +42,14 @@ Find flag hiding somewhere just need to think differently to find:
 
 Bypass mechanism, real hacking: harder, need to understand mechanism or source code
 etc...
+
+- Search on sourcegraph.com (or local, not github) headers supported by framework, many weird things can happen based on header like X-Forwarded-For, X-Forwarded-Prefix e.g <https://sourcegraph.com/search?q=context%3Aglobal+repo%3A%5Egithub%5C.com%2Fgin-gonic%2Fgin%24+X-&patternType=standard&sm=1&groupBy=path>
+
 ### Forensics
 - Corrupted files: use tools or write code to fix headers
 - Hidden files: read file headers to find hidden files, use tools.
 - Exiftool checks additional infos
-- bmp, jpeg, wav files could be used with steghide
+- bmp, jpeg, wav files could be used with steghide, steghide may not using password
 
 ## Tools & resources
 ### All the things
